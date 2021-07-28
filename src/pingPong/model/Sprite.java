@@ -7,14 +7,14 @@ public class Sprite {
 
     private final Vector position;
     private final Vector velocity;
-    private double bounce; // degrees
+    private double rotation; // degrees
     private final Rectangle boundary;
     private Image image;
 
     public Sprite() {
         position = new Vector();
         velocity = new Vector();
-        bounce = 0;
+        rotation = 0;
         boundary = new Rectangle();
     }
 
@@ -45,7 +45,7 @@ public class Sprite {
     public void render(GraphicsContext context) {
         context.save();
         context.translate(position.getX(), position.getY());
-        context.rotate(bounce);
+        context.rotate(rotation);
         context.translate(-image.getWidth() / 2, -image.getHeight() / 2);
         context.drawImage(image, 0, 0);
         context.restore();
@@ -60,12 +60,12 @@ public class Sprite {
         return velocity;
     }
 
-    public double getBounce() {
-        return bounce;
+    public double getRotation() {
+        return rotation;
     }
 
-    public void setBounce(double bounce) {
-        this.bounce = bounce;
+    public void setRotation(double rotation) {
+        this.rotation = rotation;
     }
 
     public Image getImage() {

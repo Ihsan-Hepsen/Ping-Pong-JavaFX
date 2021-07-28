@@ -58,7 +58,7 @@ public class PlayScreenPresenter {
 
         cubuk2 = new Sprite("/stick.png");
         cubuk2.getPosition().set(1015, 320);
-        cubuk2.getVelocity().set(0, 30);
+        cubuk2.getVelocity().set(0, 50);
 
         ball = new Sprite("/ball_2.png");
         ball.getPosition().set(525.5, 300);
@@ -80,7 +80,6 @@ public class PlayScreenPresenter {
                 manageCubukMovement();
 
                 if (score()) {
-                    System.out.println(model.getPlayer1().getScore() + " : " + model.getPlayer2().getScore());
                     ++rounds;
                     if (rounds == model.getRounds()) {
                         gameLoop.stop();
@@ -90,7 +89,7 @@ public class PlayScreenPresenter {
                     }
                 }
 
-                ball.getVelocity().setLength(ball.getVelocity().getLength() + .2);
+                ball.getVelocity().setLength(ball.getVelocity().getLength() + .45);
                 background.render(context);
                 cubuk1.render(context);
                 cubuk2.render(context);

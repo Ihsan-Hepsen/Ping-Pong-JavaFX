@@ -19,7 +19,6 @@ public class AppLaunch extends Application {
         stage.setWidth(1050.0);
         stage.setHeight(640.0);
         stage.setResizable(false);
-        stage.getIcons().addAll(new Image(String.valueOf(getClass().getResource("/logo.png"))));
         stage.setScene(new Scene(view));
         stage.show();
     }

@@ -34,11 +34,11 @@ public class Rectangle {
         // this to the right of other
         // this is above other
         // other is above this
-        boolean noOverlap = x + width < other.x ||
-                        other.x + other.width < x ||
-                        y + height < other.y ||
-                        other.y + other.height < y;
+        boolean collision = x + width < other.x ||
+                other.x + other.width < x ||
+                y + height < other.y ||
+                other.y + other.height < y;
 
-        return !noOverlap;
+        return !collision;
     }
 }
