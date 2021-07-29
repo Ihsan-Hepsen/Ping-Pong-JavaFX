@@ -15,6 +15,7 @@ import pingPong.view.mainMenu.MainMenuPresenter;
 import pingPong.view.mainMenu.MainMenuView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class PlayScreenPresenter {
 
@@ -27,6 +28,8 @@ public class PlayScreenPresenter {
     private Sprite ball;
     private final GraphicsContext context;
     private final ArrayList<String> keyList = new ArrayList<>();
+    private final int[] initialBallAngles = {30, 210, -30, -210};
+    private final Random random = new Random();
     private int rounds = 0;
 
 
@@ -53,17 +56,17 @@ public class PlayScreenPresenter {
         background.getPosition().set(525, 320);
 
         cubuk1 = new Sprite("/stick.png");
-        cubuk1.getPosition().set(20, 320);
+        cubuk1.getPosition().set(20, 300);
         cubuk1.getVelocity().set(50, 0);
 
         cubuk2 = new Sprite("/stick.png");
-        cubuk2.getPosition().set(1015, 320);
+        cubuk2.getPosition().set(1015, 300);
         cubuk2.getVelocity().set(0, 50);
 
         ball = new Sprite("/ball_2.png");
         ball.getPosition().set(525.5, 300);
         ball.getVelocity().setLength(230);
-        ball.getVelocity().setAngle(30);
+        ball.getVelocity().setAngle(initialBallAngles[random.nextInt(4)]);
 
     }
 
@@ -91,9 +94,9 @@ public class PlayScreenPresenter {
 
                 ball.getVelocity().setLength(ball.getVelocity().getLength() + .45);
                 background.render(context);
+                ball.render(context);
                 cubuk1.render(context);
                 cubuk2.render(context);
-                ball.render(context);
             }
         };
         gameLoop.start();

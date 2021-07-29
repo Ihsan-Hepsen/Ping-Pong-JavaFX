@@ -36,8 +36,8 @@ public class Rectangle {
         // other is above this
         boolean collision = x + width < other.x ||
                 other.x + other.width < x ||
-                y + height < other.y ||
-                other.y + other.height < y;
+                y + height < other.y - 50 ||
+                other.y + other.height < y + 25;
 
         return !collision;
     }

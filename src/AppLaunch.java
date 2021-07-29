@@ -1,4 +1,3 @@
-import javafx.scene.image.Image;
 import pingPong.view.mainMenu.MainMenuPresenter;
 import pingPong.view.mainMenu.MainMenuView;
 import javafx.application.Application;
